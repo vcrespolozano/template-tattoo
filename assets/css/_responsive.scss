@@ -10,11 +10,55 @@
 }
 
 @media (max-width: 1439px) {
-   
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos {
+        left     : 20px;
+        right    : 20px;
+        padding  : 20px;
+        font-size: 16px;
+    }
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .titulo {
+        line-height: 2em;
+    }
+    header .enlace_cabecera.izquierda {
+        left: 20px;
+    }
+    header .enlace_cabecera.derecha {
+        right: 20px;
+    }
 }
 
 @media (max-width: 1279px) {
-  
+    .titulo_general {
+        font-size      : 2.2em;
+        padding-left   : 50px;
+        background-size: 35px;
+    }
+    .separador {
+        top   : -50px;
+        width : 100px;
+        height: 100px;
+    }
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .titulo {
+        font-size: 3em;
+    }
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .descripcion {
+        line-height: 1.5em;
+    }
+    .artistas .contiene_artistas .item_artista {
+        width : calc(33.333% - 30px);
+        margin: 15px;
+    }
+    .trabajos .contenedor_galeria {
+        margin-top: 25px;
+    }
+    .trabajos .contenedor_galeria .item_galeria {
+        width: 33.333%;
+    }
+    .popup .descripcion {
+        max-height   : 450px;
+        overflow-y   : auto;
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 1023px) {

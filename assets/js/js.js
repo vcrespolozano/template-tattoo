@@ -38,6 +38,9 @@ $(document).ready(function(){
             $('.menu').removeClass('on');
     });
 
+    // Alto foto contacto
+    altoFotoContacto();
+
     // Submit contacto
     $('#submit').click(function(){
         validarContacto();
@@ -136,6 +139,16 @@ const smoothScrollTo = (destino) => {
     $('html, body').animate({
         scrollTop: scroll
     }, 800);
+}
+
+const altoFotoContacto = () => {
+
+    let alto_form = $('#contacto form').outerHeight(true);
+    $('.foto_contacto img').css('height', alto_form+'px');
+
+    if( ancho_pantalla < 1024 )
+        $('.foto_contacto img').css('height', 'auto');
+
 }
 
 const validarContacto = () => {
