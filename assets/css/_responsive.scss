@@ -2,7 +2,11 @@
 @use 'mixins' as *;
 
 @media (max-width: 1600px) {
-
+    .contenedor,
+    .contenedor.w_1600,
+    .contenedor.w_1260 {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 1439px) {
