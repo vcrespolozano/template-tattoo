@@ -1,0 +1,32 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@media (hover: hover) {
+    nav.menu ul li:hover {
+        color: $color_principal;
+
+        &:after {
+            top: 25%;
+        }
+    }
+    header .enlace_cabecera:hover:after {
+        @include scalar(1);
+        opacity: .5;
+    }
+    .trabajos .contenedor_galeria .item_galeria:hover:before {
+        @include scalar(1);
+        opacity: 1;
+    }
+    .contacto form .btn_form:hover {
+        background  : $color_claro;
+        color       : $color_negro;
+        border-color: $color_principal;
+    }
+    .contacto form label.custom_checkbox .checkbox_link:hover {
+        color: $color_principal;
+    }
+    .popup .cerrar_popup:hover {
+        background-color: $color_principal;
+        color           : $color_negro;
+    }
+}

@@ -1,0 +1,63 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+/*** MENU ****/
+nav.menu {
+    @include fixedPos(0, auto, 0, 0);
+    background: rgba(0, 0, 0, .8);
+    border-top: 1px solid $color_principal;
+    z-index   : 9;
+
+    ul {
+        max-width : $w_1260;
+        margin    : 0 auto;
+        font-size : 15px;
+        text-align: center;
+
+        li {
+            position      : relative;
+            display       : inline-block;
+            vertical-align: middle;
+            padding       : 0 10px;
+            font-size     : 1.2em;
+            line-height   : 1.5em;
+            padding       : 15px 20px;
+            color         : $color_claro;
+            text-transform: uppercase;
+            cursor        : pointer;
+            @include transicion(300ms);
+            z-index: 1;
+
+            &:after {
+                content: '';
+                @include absolutePos(0, 100%, 0, 0);
+                @include transicion(300ms);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.3) 100%);
+                z-index: 1;
+            }
+
+            &.active {
+                color: $color_principal;
+
+                &:after {
+                    top: 25%;
+                }
+            }
+        }
+    }
+
+    /*** HSCROLL ***/
+    .hscroll {
+        @include absolutePos(0, -1px, 0, auto);
+        background: $color_claro;
+        height    : 1px;
+        width     : 0;
+        margin    : 0 auto;
+        @include transicion(100ms);
+        z-index   : 3;
+    }
+
+    .cerrar_menu {
+        display: none;
+    }
+}

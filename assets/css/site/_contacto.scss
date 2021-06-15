@@ -1,0 +1,237 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+/***** CONTACTO *****/
+.contacto {
+    position       : relative;
+    padding        : 50px 0;
+    z-index        : 1;
+
+    &:after {
+        content: '';
+        @include absolutePos(0, 0, 0, auto);
+        height    : 1px;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 85%);
+        z-index   : 1;
+    }
+
+    form {
+        position  : relative;
+        float     : left;
+        width     : 50%;
+        margin-top: 15px;
+        z-index   : 1;
+
+        .caja_campo {
+            position      : relative;
+            width         : 100%;
+            margin-bottom : 20px;
+            z-index       : 1;
+
+            &.mitad {
+                width: 49%;
+            }
+            
+            label {
+                font-family  : $fuente_titulos;;
+                display      : block;
+                color        : $color_principal;
+                font-size    : 1.3em;
+                margin-bottom: 8px;
+            }
+            
+            input {
+                display      : block;
+                width        : 100%;
+                margin       : 0 auto;
+                background   : none;
+                border       : 1px solid $color_claro;
+                border-radius: 5px;
+                color        : $color_claro;
+                line-height  : 50px;
+                height       : 50px;
+                font-size    : 1.2em;
+                padding      : 0 20px;
+                @include transicion(200ms);
+
+                &:focus {
+                    border-color: $color_principal;
+                }
+
+                &.errored {
+                    border-color: red;
+                }
+            }
+
+            textarea {
+                display      : block;
+                width        : 100%;
+                margin       : 0 auto;
+                background   : none;
+                border       : 1px solid $color_claro;
+                border-radius: 5px;
+                color        : $color_claro;
+                font-size    : 1.2em;
+                line-height  : 24px;
+                height       : 150px;
+                padding      : 10px 20px;
+                resize       : none;
+                @include transicion(200ms);
+
+                &:focus {
+                    border-color: $color_principal;
+                }
+
+                &.errored {
+                    border-color: red;
+                }
+            }
+            
+            .contador_char {
+                position   : absolute;
+                bottom     : 0;
+                right      : 0;
+                font-size  : 12px;
+                color      : $color_claro;
+                line-height: 40px;
+                text-align : right;
+            }
+        }
+
+        /*** CUSTOM CHECKBOX ***/
+        label.custom_checkbox {
+            display            : block;
+            position           : relative;
+            margin-bottom      : 12px;
+            cursor             : pointer;
+            font-size          : 1.1em;
+            line-height        : 40px;
+            color              : $color_claro;
+            text-align         : center;
+            -webkit-user-select: none;
+            -moz-user-select   : none;
+            -ms-user-select    : none;
+            user-select        : none;
+
+            .checkbox {
+                display         : inline-block;
+                vertical-align  : middle;
+                position        : relative;
+                height          : 30px;
+                width           : 30px;
+                border          : 1px solid $color_claro;
+                border-radius   : 5px;
+                background-color: transparent;
+                margin-right    : 12px;
+                @include transicion(250ms);
+
+                &.errored {
+                    border-color: red;
+                }
+            
+                &:after {
+                    content          : "";
+                    @include absolutePos(10px, 6px, auto, auto);
+                    display          : none;
+                    width            : 8px;
+                    height           : 13px;
+                    border           : solid $color_claro;
+                    border-width     : 0 3px 3px 0;
+                    @include rotar(45deg);
+                }
+            }
+
+            input {
+                position: absolute;
+                opacity : 0;
+                cursor  : pointer;
+                height  : 0;
+                width   : 0;
+
+                &:checked {
+                    & ~ .checkbox {
+                        background: $color_principal;
+
+                        &:after {
+                            display: block;
+                        }
+                    }   
+                }
+            }
+            a {
+                color: $color_claro;
+            }
+            .checkbox_link {
+                @include transicion(250ms);
+                text-decoration: underline;
+            }
+        }
+
+        .btn_form {
+            display      : block;
+            width        : 100%;
+            margin-top   : 15px;
+            border       : 1px solid $color_claro;
+            border-radius: 5px;
+            background   : $color_principal;
+            color        : $color_claro;
+            font-size    : 18px;
+            line-height  : 45px;
+            height       : 45px;
+            text-align   : center;
+            @include transicion(300ms);
+        }
+    }
+
+    .foto_contacto {
+        float       : right;
+        width       : 50%;
+        padding-left: 4%;
+
+        img {
+            display   : block;
+            width     : 100%;
+            height    : auto;
+            object-fit: cover;
+        }
+    }
+
+    .ubicacion {
+        position     : relative;
+        text-align   : center;
+        font-size    : 16px;
+        background   : rgba(0, 0, 0, .7);
+        padding      : 15px 10px;
+        border       : 1px solid $color_principal;
+        border-radius: 10px;
+        z-index      : 1;
+
+        .titulo {
+            position      : relative;
+            font-family   : $fuente_titulos;
+            font-size     : 1.8em;
+            color         : $color_claro;
+            padding-bottom: 20px;
+            margin-bottom : 20px;
+            z-index       : 1;
+
+            &:after {
+                content: '';
+                @include absolutePos(20px, auto, 20px, 0);
+                height    : 1px;
+                max-width : 360px;
+                margin    : 0 auto;
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(216,200,166,1) 40%, rgba(216,200,166,1) 60%, rgba(255,255,255,0) 100%);
+                z-index   : 1;
+            }
+        }
+
+        p {
+            display    : block;
+            font-size  : 1em;
+            line-height: 1.5em;
+            margin     : 5px 0;
+            color      : $color_claro;
+        }
+    }
+}

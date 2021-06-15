@@ -1,0 +1,33 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+/*** SOBRE NOSOTROS ****/
+.about {
+    position : relative;
+    padding  : 50px 0 25px;
+    font-size: 16px;
+    z-index  : 1;
+
+    &:after {
+        content: '';
+        @include absolutePos(0, 0, 0, auto);
+        height    : 1px;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 85%);
+        z-index   : 1;
+    }
+
+    .descripcion {
+        font-size  : 1em;
+        line-height: 1.6em;
+        color      : $color_claro;
+        text-align : justify;
+
+        p {
+            margin: 12px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

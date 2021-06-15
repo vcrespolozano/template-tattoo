@@ -1,0 +1,73 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+/*** CABECERA ***/
+header {
+    @include absolutePos(0, 0, 0, auto);
+    padding   : 20px 0;
+    max-width : $w_1260;
+    margin    : 0 auto;
+    text-align: center;
+    z-index   : 2;
+
+    .logo {
+        display            : inline-block;
+        vertical-align     : middle;
+        width              : 200px;
+        height             : 200px;
+        background         : url('../img/logo_v3.png');
+        background-position: center;
+        background-repeat  : no-repeat;
+        background-size    : contain;
+        z-index            : 1;
+    }
+
+    .enlace_cabecera {
+        @include absolutePos(auto, 20px, auto, auto);
+        display        : block;
+        color          : $color_claro;
+        font-size      : 17px;
+        line-height    : 32px;
+        padding        : 10px;
+        text-decoration: none;
+        z-index        : 1;
+
+        i {
+            position      : relative;
+            display       : inline-block;
+            vertical-align: middle;
+            width         : 32px;
+            height        : 32px;
+            line-height   : 32px;
+            font-size     : 24px;
+            z-index       : 2;
+        }
+
+        .txt {
+            position      : relative;
+            display       : inline-block;
+            vertical-align: middle;
+            margin-left   : 10px;
+            z-index       : 2;
+        }
+
+        &.izquierda {
+            left: 0;
+        }
+
+        &.derecha {
+            right: 0;
+        }
+
+        &:after {
+            content: '';
+            @include absolutePos(0, 0, 0, 0);
+            background: $color_principal;
+            @include transicion(250ms);
+            @include scalar(0.9);
+            border-radius: 5px;
+            opacity      : 0;
+            z-index      : 1;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+/*** BANNER SUPERIOR ****/
+.carrusel_bienvenida {
+    position: relative;
+    z-index : 1;
+
+    .contiene_carrusel {
+        position: relative;
+        z-index : 1;
+
+        .item_carrusel {
+            position: relative;
+            overflow: hidden;
+            z-index : 1;
+
+            &:after {
+                content: '';
+                @include absolutePos(0, 0, 0, 0);
+                background: rgba(0, 0, 0, .3);
+                z-index   : 2;
+            }
+
+            .img {
+                position           : relative;
+                height             : 100vh;
+                background-position: center;
+                background-repeat  : no-repeat;
+                background-size    : cover;
+                @include transicion(7s);
+                z-index : 1;
+            }
+
+            .textos {
+                @include absolutePos(0, 50%, 0, auto);
+                margin    : 0 auto;
+                max-width : $w_1260;
+                padding   : 25px;
+                font-size : 16px;
+                text-align: center;
+                @include Ytranslate(-50%);
+                z-index   : 3;
+
+                .titulo {
+                    font-family: $fuente_titulos;
+                    font-size  : 3.5em;
+                    line-height: 2.5em;
+                    color      : $color_claro;
+                }
+
+                .descripcion {
+                    font-size      : 1.1em;
+                    line-height    : 2em;
+                    color          : $color_claro;
+                    text-align     : justify;
+                    text-align-last: center;
+                }
+
+                .linea_transicion_top {
+                    @include absolutePos(0, 0, 100%, auto);
+                    height        : 1px;
+                    background    : linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(216,200,166,1) 100%);
+                    pointer-events: none;
+                    @include transicion(7s);
+                    z-index       : 1;
+                }
+
+                .linea_transicion_bot {
+                    @include absolutePos(100%, auto, 0, 0);
+                    height        : 1px;
+                    background    : linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(216,200,166,1) 100%);
+                    pointer-events: none;
+                    @include transicion(7s);
+                    z-index       : 1;
+                }
+            }
+        }
+
+        .owl-item.active {
+            .item_carrusel {
+                .img {
+                    @include scalar(1.1);
+                }
+
+                .textos {
+                    .titulo {
+                        animation                  : 'fadeInDown';
+                        animation-delay            : 500ms;
+                        animation-duration         : 1s;
+                        -webkit-animation-fill-mode: both;
+                        animation-fill-mode        : both;
+                    }
+                    .descripcion {
+                        animation                  : 'fadeInUp';
+                        animation-delay            : 750ms;
+                        animation-duration         : 1s;
+                        -webkit-animation-fill-mode: both;
+                        animation-fill-mode        : both;
+                    }
+                    .linea_transicion_top {
+                        right: 0;
+                    }
+                    .linea_transicion_bot {
+                        left: 0;
+                    }
+                }
+            } 
+        }
+    }
+}
