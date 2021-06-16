@@ -76,6 +76,19 @@
 }
 
 @media (max-width: 767px) {
+    /*** ARREGLAMOS EL FIXED BG EN MÓVIL ***/
+    body {
+        background      : none;
+        background-color: $color_negro;
+    }
+    body:after {
+        content: '';
+        @include fixedPos(0, 0, 0, 0);
+        background     : url('../img/bg_body.jpg') center no-repeat;
+        background-size: cover;
+        z-index        : 0;
+    }
+
    /** MAQUETAMOS EL MENÚ MÓVIL ***/
    nav.menu {
         top       : 0;
