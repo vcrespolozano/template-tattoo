@@ -123,8 +123,8 @@ $(window).scroll(function (event) {
     // Posiciones de los contenidos
     inicio   = 0;
     about    = $('#sobre').offset().top;
-    artists  = $('#artistas').offset().top;
     trabajos = $('#trabajos').offset().top;
+    artists  = $('#artistas').offset().top;
     contact  = $('#contacto').offset().top;
 
     // Esta referencia es para activar la opción de los proyectos
@@ -134,12 +134,12 @@ $(window).scroll(function (event) {
 
     if( scroll < about )
         opcion = 'go_inicio';
-    else if( scroll >= about && scroll < artists )
+    else if( scroll >= about && scroll < trabajos )
         opcion = 'go_sobre';
-    else if( scroll >= artists && scroll < trabajos )
-        opcion = 'go_artistas';
-    else if( scroll >= trabajos && scroll < contact && scroll < offset_bottom )
+    else if( scroll >= trabajos && scroll < artists )
         opcion = 'go_trabajos';
+    else if( scroll >= artists && scroll < contact && scroll < offset_bottom )
+        opcion = 'go_artistas';
     else
         opcion = 'go_contacto';
 
