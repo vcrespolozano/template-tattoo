@@ -119,6 +119,9 @@
         margin         : 0 auto;
         z-index        : 1;
     }
+    nav.menu .hscroll {
+        display: none;
+    }
     header .logo {
         width : 120px;
         height: 120px;
@@ -198,7 +201,6 @@
         width : 205px;
         height: 40px;
         margin: 20px auto;
-
     }
 }
 
