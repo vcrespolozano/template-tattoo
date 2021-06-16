@@ -5,7 +5,7 @@
 footer {
     position  : relative;
     text-align: center;
-    background: rgba(0, 0, 0, 75);
+    border-top: 1px solid $color_principal;
     z-index   : 1;
 
     p {

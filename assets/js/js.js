@@ -65,6 +65,11 @@ $(document).ready(function(){
     // PARA MÓVIL
     if( ancho_pantalla < 768 )
     {
+        /*** FIX PARA EL ZOOM DE BANNER BIENVENIDA **/
+        let alto_imagenes_bienvenida = $('.carrusel_bienvenida .contiene_carrusel .img').outerHeight(true);
+        $('.carrusel_bienvenida .contiene_carrusel').css('max-height', alto_imagenes_bienvenida+'px');
+
+
         /** CARRUSEL/SLIDER - SERVICIOS */
         $('.contiene_artistas').addClass('owl-carousel');
         $('.contiene_artistas').owlCarousel({
@@ -87,6 +92,9 @@ $(document).ready(function(){
     }
     else
     {
+        /*** FIX PARA EL ZOOM DE BANNER BIENVENIDA **/
+        $('.carrusel_bienvenida .contiene_carrusel').css('max-height', 'none');
+
         if( $('.contiene_artistas').hasClass('owl-carousel') )
         {
             $('.contiene_artistas').owlCarousel('destroy'); 

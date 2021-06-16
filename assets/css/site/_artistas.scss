@@ -4,8 +4,16 @@
 /*** ARTISTAS ****/
 .artistas {
     position: relative;
-    padding : 25px 0 75px;
+    padding : 50px 0 75px;
     z-index : 1;
+
+    &:after {
+        content: '';
+        @include absolutePos(0, 0, 0, auto);
+        height    : 1px;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 85%);
+        z-index   : 1;
+    }
 
     .contiene_artistas {
         position  : relative;
