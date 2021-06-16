@@ -38,6 +38,10 @@
         width : 100px;
         height: 100px;
     }
+    header .logo {
+        width : 170px;
+        height: 170px;
+    }
     .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .titulo {
         font-size: 3em;
     }
@@ -62,11 +66,140 @@
 }
 
 @media (max-width: 1023px) {
-
+    .contacto form {
+        float: none;
+        width: 100%;
+    }
+    .contacto .foto_contacto {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
-   
+   /** MAQUETAMOS EL MENÚ MÓVIL ***/
+   nav.menu {
+        top       : 0;
+        background: rgba(0, 0, 0, .9);
+        @include scalar(1.1);
+        @include transicion(350ms);
+        border        : none;
+        opacity       : 0;
+        pointer-events: none;
+        z-index       : 10;
+    }
+    nav.menu.on {
+        @include scalar(1);
+        pointer-events: all;
+        opacity: 1;
+    }
+    nav.menu ul {
+        text-align : center;
+        padding-top: 40%;
+    }
+    nav.menu ul li {
+        display    : block;
+        font-size  : 22px;
+        line-height: 30px;
+        padding    : 0;
+        margin     : 20px 0;
+    }
+    nav.menu ul li:after {
+        display: none;
+    }
+    nav.menu .cerrar_menu {
+        display: block;
+    }
+    nav:after {
+        content: '';
+        @include absolutePos(0, auto, 0, 10%);
+        background     : url('../img/pattern_4.png') center no-repeat;
+        background-size: contain;
+        width          : 205px;
+        height         : 40px;
+        margin         : 0 auto;
+        z-index        : 1;
+    }
+    header .logo {
+        width : 120px;
+        height: 120px;
+    }
+    header .enlace_cabecera .txt {
+        display: none;
+    }
+    header .enlace_cabecera.izquierda {
+        left: 10px;
+        top : 10px;
+    }
+    header .enlace_cabecera.derecha {
+        right: 10px;
+        top  : 10px;
+    }
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .titulo {
+        font-size: 2em;
+    }
+    .carrusel_bienvenida .contiene_carrusel .item_carrusel .textos .descripcion {
+        font-size  : 1em;
+        line-height: 1.4em;
+    }
+    .titulo_general {
+        font-size   : 2em;
+        padding-left: 0;
+        background  : none;
+        text-align  : center;
+    }
+    .toggle_menu {
+        display: block;
+    }
+    .artistas .contiene_artistas .item_artista {
+        width : 100%;
+        margin: 0;
+    }
+    .trabajos .contenedor_galeria .item_galeria {
+        width: 50%;
+    }
+    .contacto form .caja_campo.mitad {
+        width: 100%;
+    }
+    .contacto form label.custom_checkbox {
+        font-size: 1em;
+    }
+    footer p {
+        font-size  : 15px;
+        line-height: 40px;
+    }
+    .popup {
+        padding: 50px 20px 20px;
+
+    }
+    .popup .titulo_general {
+        font-size   : 1.6em;
+        padding-left: 0;
+        background  : none;
+    }
+    .popup .descripcion {
+        max-height: 360px;
+    }
+    .contacto .ubicacion {
+        font-size: 14px;
+    }
+    .contacto .ubicacion .titulo {
+        padding-bottom: 15px;
+        margin-bottom : 15px;
+    }
+    .loader .txt {
+        font-size : 25px;
+        text-align: center;
+    }
+    .loader:after {
+        width : 180px;
+        height: 180px;
+    }
+    .separador_aux {
+        width : 205px;
+        height: 40px;
+        margin: 20px auto;
+
+    }
 }
 
 @media (max-width: 360px) {
