@@ -82,10 +82,31 @@
         background: rgba(0, 0, 0, .9);
         @include scalar(1.1);
         @include transicion(350ms);
-        border        : none;
+        border        : 1px solid $color_principal;
+        border-radius : 10px;
+        border-bottom : none;
         opacity       : 0;
         pointer-events: none;
+        overflow      : hidden;
         z-index       : 10;
+    }
+    nav.menu:before {
+        content: '';
+        @include absolutePos(0, auto, 0, 0);
+        height    : 1px;
+        background: linear-gradient(90deg, rgba(216, 200, 166,1) 5%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(216, 200, 166,1) 95%);
+        z-index   : 1;
+    }
+    nav:after {
+        content: '';
+        @include absolutePos(0, auto, 0, -55px);
+        background     : url('../img/pattern_3.png') center no-repeat;
+        background-size: contain;
+        width          : 128px;
+        height         : 128px;
+        margin         : 0 auto;
+        @include rotar(180deg);
+        z-index        : 1;
     }
     nav.menu.on {
         @include scalar(1);
@@ -108,16 +129,6 @@
     }
     nav.menu .cerrar_menu {
         display: block;
-    }
-    nav:after {
-        content: '';
-        @include absolutePos(0, auto, 0, 10%);
-        background     : url('../img/pattern_4.png') center no-repeat;
-        background-size: contain;
-        width          : 205px;
-        height         : 40px;
-        margin         : 0 auto;
-        z-index        : 1;
     }
     nav.menu .hscroll {
         display: none;

@@ -11,7 +11,7 @@
         content: '';
         @include absolutePos(0, 0, 0, auto);
         height    : 1px;
-        background: linear-gradient(90deg, rgba(179,36,0,1) 15%, rgba(255,255,255,0) 50%, rgba(179,36,0,1) 85%);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 85%);
         z-index   : 1;
     }
 
@@ -221,7 +221,7 @@
                 height    : 1px;
                 max-width : 360px;
                 margin    : 0 auto;
-                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(179,36,0,1) 40%, rgba(179,36,0,1) 60%, rgba(255,255,255,0) 100%);
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
                 z-index   : 1;
             }
         }

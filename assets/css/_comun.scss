@@ -136,7 +136,7 @@ strong {
 /** SEPARADOR ***/
 .separador {
   @include absolutePos(0, -64px, 0, auto);
-  background     : url('../img/pattern_2.png') center no-repeat;
+  background     : url('../img/pattern_2r.png') center no-repeat;
   background-size: contain;
   width          : 128px;
   height         : 128px;
